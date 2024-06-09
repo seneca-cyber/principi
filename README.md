@@ -15,12 +15,12 @@ Traditional governance tools are often expensive and fail to deliver on their pr
 
 ## Principi offers a fresh approach:
 
-**Evidence Generation:** Collects findings and policies and documents them as evidence in markdown and JSON.
-**Flexibility:** Use any reasonable platform with an open and documented RESTful API as a evidence source:w.
-**Simplicity:** Principi converts security-related data into markdown or JSON using a straightforward declarative YAML syntax.
-**Integration:** Easily import evidence and policies into various tools and platforms, with EVERYTHING linked correctly the first time
-**Policy-Driven Automation:** Define and manage policies and their findings in YAML, and then publish to your Governance Platform. 
-**Seamless Integration:** Works with existing provider modules or custom-built ones.
+- **Evidence Generation:** Collects findings and policies and documents them as evidence in markdown and JSON.
+- **Flexibility:** Use any reasonable platform with an open and documented RESTful API as an evidence source.
+- **Simplicity:** Principi converts security-related data into markdown or JSON using a straightforward declarative YAML syntax.
+- **Integration:** Easily import evidence and policies into various tools and platforms, with EVERYTHING linked correctly the first time.
+- **Policy-Driven Automation:** Define and manage policies and their findings in YAML, and then publish to your Governance Platform.
+- **Seamless Integration:** Works with existing provider modules or custom-built ones.
 
 ## Questions and Answers
 ### Q. Why do I need Principi acting as a middle man between my various platforms? Can’t I just role my own API integration using curl and python?  
