@@ -33,7 +33,9 @@
                 significant changes are made to the environment. Action is taken to remediate identified deficiencies 
                 in a timely manner to support the achievement of the entity's objectives.
               ]  # Notes describing the finding and its significance
-            control: principi.soc.soc2.cc7.1  # Control identifier for compliance
+            control: 
+              - principi.soc.soc2t1.cc7.1  # Control identifier for compliance
+              - principi.soc.soc2t2.cc7.1  # Control identifier for compliance
 
           - name: Amazon_Macie_FIM  # Name of the finding
             type: macie  # Type of the finding (Amazon Macie)
@@ -47,7 +49,9 @@
                 (for example, file integrity monitoring tools) to alert personnel to unauthorized modifications 
                 of critical system files, configuration files, or content files.
               ]  # Notes describing the finding and its significance
-            control: principi.soc.soc2.cc7.1  # Control identifier for compliance
+            control:
+              - principi.soc.soc2t1.cc7.1  # Control identifier for compliance
+              - principi.soc.soc2t2.cc7.1  # Control identifier for compliance
 
     - name: Confluence_Policies  # Name of the provider
       principi.providers.confluence:
@@ -70,7 +74,9 @@
                 significant changes are made to the environment. Action is taken to remediate identified deficiencies 
                 in a timely manner to support the achievement of the entity's objectives.
               ]  # Notes describing the policy and its significance
-            control: principi.soc.soc2.cc7.1  # Control identifier for compliance
+            control:
+              - principi.soc.soc2t1.cc7.1  # Control identifier for compliance
+              - principi.soc.soc2t2.cc7.1  # Control identifier for compliance
 
           - name: File_Integrity_Management_Policy  # Name of the policy
             type: page  # Type of the policy (page)
@@ -83,7 +89,9 @@
                 (for example, file integrity monitoring tools) to alert personnel to unauthorized modifications 
                 of critical system files, configuration files, or content files.
               ]  # Notes describing the policy and its significance
-            control: principi.soc.soc2.cc7.1  # Control identifier for compliance
+            control:
+              - principi.soc.soc2t1.cc7.1  # Control identifier for compliance
+              - principi.soc.soc2t2.cc7.1  # Control identifier for compliance
 
   # List of receivers
   recievers:

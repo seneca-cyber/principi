@@ -30,15 +30,13 @@ You are absolutely right. MIddlemen are really annoying. Until you have to chang
 If a module does not exist, you can roll your own, ask the community to roll the module, or pay us at Seneca Cyber to help you build it. 
 
 ### Q. How does Principi Work? 
-Simply run the command `principi --sync document.yml`, where document.yml is your principi governance as code file. Each principi file is made up of 4 primary components. 
+Simply run the command `principi --sync document.yml`, where document.yml is your principi governance as code file. Each principi file is made up of 3 primary components. 
 
-1. **A principle definition** - What policy framework, and what control manages the provided and received data?
+1. **A provider definition** - Where are we collecting data from? Is it a finding or a policy? This information goes in here.
 
-2. **A provider definition** - Where are we collecting data from? Is it a finding or a policy? This information goes in here.
+2. **A receiver definition** - Where is that data going?
 
-3. **A receiver definition** - Where is that data going?
-
-4. **An Authentication definition** - What identity are we using to access providers and receivers?
+3. **An Authentication definition** - What identity(s) are we using to access providers and receivers?
 
 [Here is an example of a principi document](https://github.com/seneca-cyber/principi/blob/main/example.yml)
 
