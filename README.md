@@ -30,7 +30,7 @@ You are absolutely right. MIddlemen are really annoying. Until you have to chang
 If a module does not exist, you can roll your own, ask the community to roll the module, or pay us at Seneca Cyber to help you build it. 
 
 ### Q. How does Principi Work? 
-Simply run the command “principi --sync document.yml”, where document.yml is your principi governance as code file. Each principi file is made up of 4 primary components. 
+Simply run the command `principi --sync document.yml`, where document.yml is your principi governance as code file. Each principi file is made up of 4 primary components. 
 
 
 **A principle definition** - What policy framework, and what control manages the provided and received data?
@@ -38,7 +38,7 @@ Simply run the command “principi --sync document.yml”, where document.yml is
 **A receiver definition** - Where is that data going?
 **A finding definition** - What data needs to be added, modified, or deleted? 
 
-Here is an example of a principi document
+[Here is an example of a principi document](https://github.com/seneca-cyber/principi/blob/main/example.yml)
 
 ### Q. Is Principi Idempotent? 
 It absolutely is! It wouldn’t be a “X as Code” platform if it weren't! Findings will not be replicated or changed if they don’t need to be modified. As a caveat though, we are at the mercies of our providers and receivers and the strength of their APIs. Principi Provider/Reciever Module documentation will provide notices if a module struggles with Idempotence. 
