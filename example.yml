@@ -1,0 +1,107 @@
+# SOC2 Compliance Principi Document
+- name: SOC2 Compliance  # Name of the principi document
+  owner: johndoe@example.com  # Name of the Root Compliance Owner
+
+  # Authentication details for HashiCorp Vault
+  authentication:
+    - name: hashi-vault
+      principi.authentication.hashicorp-vault:
+        type: token  # Authentication type is token-based
+        token_path: ~/.config/vault-token  # Path to the token file for HashiCorp Vault authentication
+        url: http://vault.johndoe.com:8200/v1/  # URL of the HashiCorp Vault server
+
+  # List of providers
+  providers:
+    - name: AWS_Security_Findings  # Name of the provider
+      principi.providers.securityhub:
+        authentication:
+          name: hashi-vault  # Authentication method for accessing AWS Security Hub
+          access_key_id: /aws/access_key_id  # Path in Vault for AWS access key ID
+          access_key_secret: /aws/access_key_secret  # Path in Vault for AWS access key secret
+          region: us-east-2  # AWS region
+        finding:  # List of findings to be checked
+          - name: Amazon_Inspector_Instance_Vulneraiblities  # Name of the finding
+            type: amazon-inspector  # Type of the finding (Amazon Inspector)
+            owner: bobdoll@example.com  # Name of the Compliance Finding Owner
+            filter:
+              - type: vulneraiblity  # Filter by type of finding (vulnerability)
+              - state: resolved  # Filter by state of finding (resolved)
+            notes:
+              [
+                Conducts Vulnerability Scans — The entity conducts infrastructure and software vulnerability scans 
+                designed to identify potential vulnerabilities or misconfigura- tions on a periodic basis and after 
+                significant changes are made to the environment. Action is taken to remediate identified deficiencies 
+                in a timely manner to support the achievement of the entity's objectives.
+              ]  # Notes describing the finding and its significance
+            control: principi.soc.soc2.cc7.1  # Control identifier for compliance
+
+          - name: Amazon_Macie_FIM  # Name of the finding
+            type: macie  # Type of the finding (Amazon Macie)
+            owner: janedoe@example.com  # Name of the Compliance Finding Owner
+            filter:
+              - type: macie  # Filter by type of finding (Macie)
+              - state: resolved  # Filter by state of finding (resolved)
+            notes: 
+              [
+                Implements Change-Detection Mechanisms — The IT system includes a change-de- tection mechanism 
+                (for example, file integrity monitoring tools) to alert personnel to unauthorized modifications 
+                of critical system files, configuration files, or content files.
+              ]  # Notes describing the finding and its significance
+            control: principi.soc.soc2.cc7.1  # Control identifier for compliance
+
+    - name: Confluence_Policies  # Name of the provider
+      principi.providers.confluence:
+        authentication:
+          name: hashi-vault  # Authentication method for accessing Confluence
+          access_key_id: /confluence/access_key_id  # Path in Vault for Confluence access key ID
+          access_key_secret: /confluence/access_key_secret  # Path in Vault for Confluence access key secret
+          domain: johndoe.atlassian.com  # Confluence domain
+          space: secops  # Confluence space
+        policy:  # List of policies to be checked
+          - name: Vulneraiblity_Management_Policy  # Name of the policy
+            type: page  # Type of the policy (page)
+            owner: bobdoll@example.com  # Name of the Policy Owner
+            filter:
+              - page_id: 10038400  # Filter by page ID
+            notes:
+              [
+                Conducts Vulnerability Scans — The entity conducts infrastructure and software vulnerability scans 
+                designed to identify potential vulnerabilities or misconfigura- tions on a periodic basis and after 
+                significant changes are made to the environment. Action is taken to remediate identified deficiencies 
+                in a timely manner to support the achievement of the entity's objectives.
+              ]  # Notes describing the policy and its significance
+            control: principi.soc.soc2.cc7.1  # Control identifier for compliance
+
+          - name: File_Integrity_Management_Policy  # Name of the policy
+            type: page  # Type of the policy (page)
+            owner: janedoe@example.com  # Name of the Policy Owner
+            filter:
+              - page_id: 10038401  # Filter by page ID
+            notes: 
+              [
+                Implements Change-Detection Mechanisms — The IT system includes a change-de- tection mechanism 
+                (for example, file integrity monitoring tools) to alert personnel to unauthorized modifications 
+                of critical system files, configuration files, or content files.
+              ]  # Notes describing the policy and its significance
+            control: principi.soc.soc2.cc7.1  # Control identifier for compliance
+
+  # List of receivers
+  recievers:
+    - name: Drata Governance Platform  # Name of the receiver
+      principi.recievers.drata:
+        authentication:
+          name: hashi-vault  # Authentication method for accessing Drata
+          access_key_id: /drata/access_key_id  # Path in Vault for Drata access key ID
+          access_key_secret: /drata/access_key_secret  # Path in Vault for Drata access key secret
+        finding:
+          - AWS_Security_Findings  # Reference to AWS Security Findings
+        policy:
+          - Confluence_Policies  # Reference to Confluence Policies
+
+    - name: Hugo Documentation  # Name of the receiver
+      principi.recievers.hugo:
+        path: ~/hugosite  # Path to Hugo site
+        finding:
+          - AWS_Security_Findings  # Reference to AWS Security Findings
+        policy:
+          - Confluence_Policies  # Reference to Confluence Policies
