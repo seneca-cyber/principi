@@ -1,13 +1,13 @@
 # principi
-`Governance as Code` - For Everyone. 
+Governance as Code - For Everyone. 
 
 ## Introduction
 
-Welcome to principi, the Cyber Security industry’s first `Governance as Code` (`GaC`) platform.
+Welcome to principi, the Cyber Security industry’s first Governance as Code (GaC) platform.
 
 ## What is principi?
 
-principi is derived from the Latin word `Principia`, which translates to "Principles" in English. It embodies the concept of `Governance as Code`, which involves using code to build, maintain, and audit business policies and their enforcement.
+principi is derived from the Latin word `Principia`, which translates to "Principles" in English. It embodies the concept of Governance as Code, which involves using code to build, maintain, and audit business policies and their enforcement.
 
 ## Why principi?
 
@@ -30,7 +30,7 @@ You are absolutely right. MIddlemen are really annoying. Until you have to chang
 If a module does not exist, you can roll your own, ask the community to roll the module, or pay us at Seneca Cyber to help you build it. 
 
 ### Q. How does principi Work? 
-Simply run the command `principi --sync document.yml`, where document.yml is your principi `governance as code` file. Each principi file is made up of 3 primary components. 
+Simply run the command `principi --sync document.yml`, where document.yml is your principi governance as code file. Each principi file is made up of 3 primary components. 
 
 1. **A Provider Definition** - Where are we collecting data from? Is it a finding or a policy? This information goes in here.
 
@@ -46,7 +46,7 @@ It absolutely is! It wouldn’t be a “X as Code” platform if it weren't! Fin
 ### Q. How much does principi cost? 
 Nothing! Free for everyone. Free forever. It is open source and we are always looking for expert contributors to help us make this platform a common standard. 
 
-### Q. Why should I use Seneca Cyber’s managed services instead of authoring my own `Governance as Code` environment with principi? 
-One day, we would LOVE for people to have so much comfort with the platform that they feel confident enough to roll it themselves. But we kinda helped invent this `Governance as Code` space, and the rules are still being written for how it should be managed and ran. The team at Seneca Cyber is uniquely qualified to help organizations implement effective feedback loops around their governance practices in a fast and simple process that we’ve managed for other clients many times.
+### Q. Why should I use Seneca Cyber’s managed services instead of authoring my own Governance as Code environment with principi? 
+One day, we would LOVE for people to have so much comfort with the platform that they feel confident enough to roll it themselves. But we kinda helped invent this Governance as Code space, and the rules are still being written for how it should be managed and ran. The team at Seneca Cyber is uniquely qualified to help organizations implement effective feedback loops around their governance practices in a fast and simple process that we’ve managed for other clients many times.
 
 
