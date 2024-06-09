@@ -32,11 +32,13 @@ If a module does not exist, you can roll your own, ask the community to roll the
 ### Q. How does Principi Work? 
 Simply run the command `principi --sync document.yml`, where document.yml is your principi governance as code file. Each principi file is made up of 4 primary components. 
 
+1. **A principle definition** - What policy framework, and what control manages the provided and received data?
 
-**A principle definition** - What policy framework, and what control manages the provided and received data?
-**A provider definition** - Where are we collecting data from?
-**A receiver definition** - Where is that data going?
-**A finding definition** - What data needs to be added, modified, or deleted? 
+2. **A provider definition** - Where are we collecting data from? Is it a finding or a policy? This information goes in here.
+
+3. **A receiver definition** - Where is that data going?
+
+4. **An Authentication definition** - What identity are we using to access providers and receivers?
 
 [Here is an example of a principi document](https://github.com/seneca-cyber/principi/blob/main/example.yml)
 
